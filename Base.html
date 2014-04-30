@@ -444,27 +444,13 @@
 
 
 	$.each(relations_withNames, function(){ 
-		try{
-		var lookupID = this.ID;
+		var lookupID = this.ID
 		var applicableFile = _.find(files,function(file){return file.id == lookupID}) 
-		if(this.type==="tag"){applicableFile.tags.push(this.name)}
-		else if(this.type==="category"){applicableFile.categories.push(this.name)}
-		else{console.log('tag/category error');console.dir(this)}
-		}
-		catch(e){
-			console.log('unknown error occured: '+e);
-			
-			console.log('relation entry:');
-			console.dir(this);
-			
-			console.log('file:');
-			console.dir(applicableFile);
-		}
-	})
-	
-console.log('----------');
-console.log(JSON.stringify(files));
-console.log('----------');
+		if(this.type==="tag"){applicableFile.tags}
+		else if(this.type==="category"){}
+		else{console.log('tag/category error');console.log(console.dir(this)}
+		
+	)}
 
 </script>
 
